@@ -1,0 +1,127 @@
+/home/srijan/anaconda3/envs/diffusion_1/bin/python /home/srijan/Documents/Proj Docs/Code/Seq2Seq/Seq2Seq/seq2seq_model.py 
+2024-10-17 15:37:28.228252: E external/local_xla/xla/stream_executor/plugin_registry.cc:91] Invalid plugin kind specified: FFT
+2024-10-17 15:37:28.275521: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-17 15:37:28.663779: E external/local_xla/xla/stream_executor/plugin_registry.cc:91] Invalid plugin kind specified: DNN
+Epoch 0 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['marks', 'marks', 'cakes', 'sparkler', 'sparkler', 'sock', 'sock', "n't", 'milk', 'ensemble', 'ensemble', 'immigration', 'brooms', 'rubs', 'york', 'ballet', 'brooms', 'free', 'twirls', 'free', 'free', 'kettle', '11', '11', '11', 'strawberry', 'strawberry', 'loom', 'feeds', 'feeds', 'ensemble', 'explores', 'immigration', 'vegetable', 'vision', 'route', 'route', 'marks', 'height', 'cloths', 'cloths', 'assortment', 'assortment', 'assortment', 'assortment', 'assortment', 'assortment', 'flag', 'assortment', 'assortment']
+Epoch 1: 100%|██████████| 454/454 [09:36<00:00,  1.27s/it]
+Bleu score 5.46
+Epoch 1 / 20
+=> Saving checkpoint
+Epoch 2:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'dog', 'dog', 'is', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '.', '<eos>']
+Epoch 2: 100%|██████████| 454/454 [09:40<00:00,  1.28s/it]
+Bleu score 8.97
+Epoch 2 / 20
+=> Saving checkpoint
+Epoch 3:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', '<unk>', 'with', 'a', '<unk>', 'is', 'a', 'a', 'a', 'a', 'a', 'a', '.', '<eos>']
+Epoch 3: 100%|██████████| 454/454 [09:43<00:00,  1.29s/it]
+Bleu score 11.21
+Epoch 3 / 20
+=> Saving checkpoint
+Epoch 4:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', '<unk>', 'with', 'with', 'a', '<unk>', 'is', 'is', 'a', 'a', 'a', 'of', 'a', 'large', 'building', '.', '<eos>']
+Epoch 4: 100%|██████████| 454/454 [10:22<00:00,  1.37s/it]
+Bleu score 11.97
+Epoch 4 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', 'street', 'with', 'a', '<unk>', 'is', 'a', 'a', 'a', 'a', 'a', 'a', 'a', '.', '<eos>']
+Epoch 5: 100%|██████████| 454/454 [10:15<00:00,  1.35s/it]
+Bleu score 14.50
+Epoch 5 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', '<unk>', 'with', 'with', 'a', 'is', 'being', 'pulled', 'by', 'a', 'large', 'of', 'a', '.', '<eos>']
+Epoch 6: 100%|██████████| 454/454 [10:11<00:00,  1.35s/it]
+Bleu score 16.22
+Epoch 6 / 20
+=> Saving checkpoint
+Epoch 7:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'with', 'number', 'number', 'by', 'a', 'large', 'large', 'by', 'a', 'large', '.', '.', '<eos>']
+Epoch 7: 100%|██████████| 454/454 [10:02<00:00,  1.33s/it]
+Bleu score 16.81
+Epoch 7 / 20
+=> Saving checkpoint
+Epoch 8:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'with', 'several', 'people', 'pulled', 'by', 'a', 'large', 'large', 'large', 'large', '.', '.', '<eos>']
+Epoch 8: 100%|██████████| 454/454 [10:16<00:00,  1.36s/it]
+Bleu score 16.41
+Epoch 8 / 20
+=> Saving checkpoint
+Epoch 9:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'his', 'pulled', 'pulled', 'by', 'a', 'large', 'by', 'a', 'large', 'large', '.', '.', '<eos>']
+Epoch 9: 100%|██████████| 454/454 [10:39<00:00,  1.41s/it]
+Bleu score 18.06
+Epoch 9 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', 'boat', 'with', 'large', 'pulled', 'pulled', 'by', 'a', 'large', 'large', 'large', 'large', 'large', '.', '.', '<eos>']
+Epoch 10: 100%|██████████| 454/454 [09:58<00:00,  1.32s/it]
+Bleu score 16.74
+Epoch 10 / 20
+=> Saving checkpoint
+Epoch 11:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'three', 'men', 'pulled', 'pulled', 'by', 'a', 'large', 'by', 'a', 'large', '.', '.', '<eos>']
+Epoch 11: 100%|██████████| 454/454 [09:56<00:00,  1.31s/it]
+Bleu score 17.21
+Epoch 11 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', 'boat', 'boat', 'to', 'pulled', 'by', 'a', 'large', 'bull', 'by', 'a', 'large', '.', '<eos>']
+Epoch 12: 100%|██████████| 454/454 [09:45<00:00,  1.29s/it]
+Bleu score 18.64
+Epoch 12 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', 'boat', 'boat', 'in', 'pulled', 'pulled', 'by', 'by', 'a', 'by', 'a', 'large', '.', '<eos>']
+Epoch 13: 100%|██████████| 454/454 [09:42<00:00,  1.28s/it]
+Bleu score 18.62
+Epoch 13 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', 'boat', 'with', 'four', 'men', 'pulled', 'pulled', 'by', 'a', 'large', 'bull', 'by', 'a', 'large', 'horses', '.', '<eos>']
+Epoch 14: 100%|██████████| 454/454 [09:41<00:00,  1.28s/it]
+Bleu score 19.23
+Epoch 14 / 20
+=> Saving checkpoint
+Epoch 15:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'several', 'men', 'pulled', 'by', 'a', 'large', 'by', 'a', 'large', '.', '<eos>']
+Epoch 15: 100%|██████████| 454/454 [10:00<00:00,  1.32s/it]
+Bleu score 19.14
+Epoch 15 / 20
+=> Saving checkpoint
+Epoch 16:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'large', 'pulled', 'pulled', 'pulled', 'by', 'a', 'large', 'by', 'by', 'horses', '.', '<eos>']
+Epoch 16: 100%|██████████| 454/454 [10:04<00:00,  1.33s/it]
+Bleu score 19.20
+Epoch 16 / 20
+=> Saving checkpoint
+Epoch 17:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'large', 'men', 'pulled', 'pulled', 'by', 'a', 'large', 'german', 'pulled', 'by', 'a', 'large', 'horses', '.', '<eos>']
+Epoch 17: 100%|██████████| 454/454 [10:02<00:00,  1.33s/it]
+Bleu score 18.68
+Epoch 17 / 20
+=> Saving checkpoint
+Epoch 18:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'boat', 'in', 'men', 'pulled', 'pulled', 'by', 'a', 'by', 'a', 'large', 'horses', '.', '<eos>']
+Epoch 18: 100%|██████████| 454/454 [09:50<00:00,  1.30s/it]
+Bleu score 19.51
+Epoch 18 / 20
+=> Saving checkpoint
+Translated example sentence 
+ ['a', 'boat', 'with', 'several', 'men', 'pulled', 'pulled', 'by', 'a', 'by', 'a', 'large', 'by', 'horses', '.', 'horses', '.', '<eos>']
+Epoch 19: 100%|██████████| 454/454 [10:11<00:00,  1.35s/it]
+Bleu score 18.42
+Epoch 19 / 20
+=> Saving checkpoint
+Epoch 20:   0%|          | 0/454 [00:00<?, ?it/s]Translated example sentence 
+ ['a', 'boat', 'with', 'several', 'men', 'pulled', 'pulled', 'by', 'a', 'large', 'by', 'a', 'large', 'body', 'of', 'horses', '.', '<eos>']
+Epoch 20: 100%|██████████| 454/454 [10:21<00:00,  1.37s/it]
+Bleu score 20.39
+
+Process finished with exit code 0
