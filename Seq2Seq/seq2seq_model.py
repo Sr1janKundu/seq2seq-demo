@@ -16,8 +16,8 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 from utils import translate_sentence, bleu, save_checkpoint, load_checkpoint
 
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device = torch.device('cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+# device = torch.device('cpu')
 Multi30k.download(root='.data')
 
 
@@ -202,7 +202,7 @@ class Seq2Seq(nn.Module):
         return outputs
 
 # training hyperparameters
-num_epochs = 20
+num_epochs = 50
 learning_rate = 0.001
 batch_size = 64
 

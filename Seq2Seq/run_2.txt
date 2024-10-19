@@ -1,0 +1,300 @@
+Epoch 0 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['arabic', ')', ')', 'related', 'related', ')', 'percussion', 'than', 'die', 'moored', 'die', 'pressure', 'die', 'pressure', 'newborn', 'mover', 'newborn', 'mover', 'mover', 'newborn', 'hurt', 'hurt', 'flying', 'city', 'waterfront', 'forest', 'downwards', 'reason', 'extremely', 'walkers', 'sniffs', 'detail', 'best', 'best', 'sailboat', 'garbage', 'pillow', 'pillow', 'knife', 'knife', 'kitty', 'knife', 'kitty', 'knife', 'kitty', 'knife', 'kitty', 'knife', 'kitty', 'knife']
+Epoch 1: 100%|█████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.30it/s]
+Bleu score 6.10
+Epoch 1 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'in', 'a', 'red', 'shirt', 'is', 'a', 'a', 'a', 'a', 'a', '.', '<eos>']
+Epoch 2: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.96it/s]
+Bleu score 10.29
+Epoch 2 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'a', '<unk>', 'is', 'is', 'to', 'the', 'the', '<unk>', 'of', 'a', '<unk>', '.', '<eos>']
+Epoch 3: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.06it/s]
+Bleu score 12.27
+Epoch 3 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'a', '<unk>', 'is', 'a', 'a', 'a', 'a', 'a', 'a', '<unk>', '.', '<eos>']
+Epoch 4: 100%|█████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.39it/s]
+Bleu score 13.67
+Epoch 4 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'a', '<unk>', 'is', 'being', 'pulled', 'by', 'a', 'large', 'of', 'a', '.', '<eos>']
+Epoch 5: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.02it/s]
+Bleu score 15.84
+Epoch 5 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'in', 'a', 'is', 'being', 'pulled', 'by', 'a', '<unk>', 'by', 'a', 'large', '.', '.', '<eos>']
+Epoch 6: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.16it/s]
+Bleu score 16.26
+Epoch 6 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'a', '<unk>', 'is', 'being', 'pulled', 'by', 'a', 'large', 'large', 'large', '.', '.', '<eos>']
+Epoch 7: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.03it/s]
+Bleu score 17.41
+Epoch 7 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'a', '<unk>', 'pulled', 'pulled', 'by', 'a', 'large', '<unk>', 'of', 'a', '.', '<eos>']
+Epoch 8: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.93it/s]
+Bleu score 17.99
+Epoch 8 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'snowshoes', 'gear', 'pulled', 'by', 'a', 'large', 'steep', 'of', 'a', 'a', 'a', '.', '<eos>']
+Epoch 9: 100%|█████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.05it/s]
+Bleu score 19.26
+Epoch 9 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'a', '<unk>', 'pulled', 'pulled', 'by', 'a', 'large', 'large', 'surrounded', 'by', 'by', 'foliage', '.', '<eos>']
+Epoch 10: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.30it/s]
+Bleu score 17.67
+Epoch 10 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'wearing', 'a', 'gear', 'pulled', 'pulled', 'by', 'a', 'large', 'by', 'by', 'a', 'large', '.', '.', '<eos>']
+Epoch 11: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.15it/s]
+Bleu score 18.30
+Epoch 11 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', '<unk>', 'being', 'pulled', 'pulled', 'by', 'a', 'large', 'cable', 'of', 'foliage', '.', '<eos>']
+Epoch 12: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.20it/s]
+Bleu score 19.85
+Epoch 12 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'just', '<unk>', 'pulled', 'by', 'a', 'large', ',', 'by', 'by', 'a', '.', '<eos>']
+Epoch 13: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.06it/s]
+Bleu score 16.90
+Epoch 13 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'wearing', 'just', 'being', 'pulled', 'pulled', 'by', 'a', 'large', 'large', ',', 'two', 'by', 'horses', '.', '<eos>']
+Epoch 14: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.94it/s]
+Bleu score 18.29
+Epoch 14 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', 'men', 'being', 'pulled', 'by', 'a', 'large', 'by', 'a', 'large', '.', '<eos>']
+Epoch 15: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.11it/s]
+Bleu score 18.61
+Epoch 15 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'many', 'being', 'pulled', 'pulled', 'by', 'a', 'large', '<unk>', 'a', 'large', 'cable', '.', '<eos>']
+Epoch 16: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.06it/s]
+Bleu score 18.12
+Epoch 16 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'boat', 'being', 'pulled', 'pulled', 'by', 'a', 'large', '<unk>', 'being', 'pulled', 'by', 'by', 'horses', '.', '<eos>']
+Epoch 17: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.02it/s]
+Bleu score 19.23
+Epoch 17 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', 'being', 'pulled', 'pulled', 'by', 'a', 'large', 'shore', 'behind', 'horses', '.', '<eos>']
+Epoch 18: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.38it/s]
+Bleu score 19.57
+Epoch 18 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', 'being', 'pulled', 'by', 'a', 'large', 'shore', 'by', 'a', 'horses', '.', '<eos>']
+Epoch 19: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.43it/s]
+Bleu score 19.87
+Epoch 19 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', 'being', 'pulled', 'pulled', 'by', 'a', 'large', 'boat', 'of', 'a', '.', '<eos>']
+Epoch 20: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.22it/s]
+Bleu score 17.64
+Epoch 20 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', 'being', 'pulled', 'pulled', 'a', 'a', 'a', 'large', 'large', 'large', 'large', 'horses', '.', '<eos>']
+Epoch 21: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.44it/s]
+Bleu score 19.72
+Epoch 21 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'with', 'many', 'men', 'being', 'pulled', 'by', 'a', 'large', 'huge', 'by', 'by', 'horses', '.', '<eos>']
+Epoch 22: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.42it/s]
+Bleu score 19.70
+Epoch 22 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'many', 'being', 'pulled', 'pulled', 'by', 'a', 'large', ',', 'while', 'a', 'by', 'horses', 'horses', '.', '<eos>']
+Epoch 23: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.04it/s]
+Bleu score 18.03
+Epoch 23 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'many', 'being', 'pulled', 'pulled', 'a', 'a', 'large', 'large', 'a', 'large', 'a', 'horses', '.', '<eos>']
+Epoch 24: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.28it/s]
+Bleu score 18.47
+Epoch 24 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'man', 'with', 'many', 'being', 'pulled', 'pulled', 'by', 'a', 'large', 'shore', 'by', 'a', 'horses', '.', '<eos>']
+Epoch 25: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.15it/s]
+Bleu score 19.20
+Epoch 25 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'many', 'men', 'being', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'large', 'horses', '.', '<eos>']
+Epoch 26: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.10it/s]
+Bleu score 20.82
+Epoch 26 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'being', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'large', '.', '<eos>']
+Epoch 27: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.53it/s]
+Bleu score 18.72
+Epoch 27 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'being', 'pulled', 'pulled', 'by', 'shore', 'from', 'a', 'large', 'large', 'wagon', '.', '<eos>']
+Epoch 28: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.46it/s]
+Bleu score 19.35
+Epoch 28 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'being', 'pulled', 'pulled', 'a', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 29: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.98it/s]
+Bleu score 18.18
+Epoch 29 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'being', 'pulled', 'pulled', 'a', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 30: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.98it/s]
+Bleu score 18.47
+Epoch 30 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'being', 'pulled', 'by', 'a', 'large', 'men', 'being', '<unk>', 'by', 'horses', '.', '<eos>']
+Epoch 31: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.98it/s]
+Bleu score 19.61
+Epoch 31 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'being', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'large', 'horses', '.', '<eos>']
+Epoch 32: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.08it/s]
+Bleu score 17.96
+Epoch 32 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'being', 'pulled', 'by', 'a', 'large', 'large', 'large', 'horses', '.', '<eos>']
+Epoch 33: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.32it/s]
+Bleu score 17.40
+Epoch 33 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'being', 'pulled', 'by', 'shore', 'of', 'a', 'large', 'large', 'wave', '.', '<eos>']
+Epoch 34: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.13it/s]
+Bleu score 19.19
+Epoch 34 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'pulled', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 35: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.98it/s]
+Bleu score 17.67
+Epoch 35 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'pulled', 'pulled', 'shore', 'shore', 'is', 'being', 'pulled', 'by', 'a', 'large', 'crowd', 'of', 'horses', '.', '<eos>']
+Epoch 36: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.46it/s]
+Bleu score 17.61
+Epoch 36 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 37: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.38it/s]
+Bleu score 18.60
+Epoch 37 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 38: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.32it/s]
+Bleu score 18.17
+Epoch 38 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 39: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.49it/s]
+Bleu score 16.57
+Epoch 39 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 40: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.47it/s]
+Bleu score 19.09
+Epoch 40 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 41: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.54it/s]
+Bleu score 17.81
+Epoch 41 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'a', 'large', ',', 'a', 'large', 'crowd', 'of', 'horses', '.', '<eos>']
+Epoch 42: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.04it/s]
+Bleu score 17.16
+Epoch 42 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'pulled', 'to', 'shore', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 43: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 13.80it/s]
+Bleu score 18.40
+Epoch 43 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 44: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.55it/s]
+Bleu score 17.75
+Epoch 44 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'being', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 45: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.04it/s]
+Bleu score 15.94
+Epoch 45 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 46: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.33it/s]
+Bleu score 17.10
+Epoch 46 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'pulled', 'to', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 47: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.41it/s]
+Bleu score 17.68
+Epoch 47 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'to', 'shore', ',', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 48: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.02it/s]
+Bleu score 18.94
+Epoch 48 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'is', 'pulled', 'to', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 49: 100%|████████████████████████████████████████████████████| 454/454 [00:31<00:00, 14.41it/s]
+Bleu score 17.53
+Epoch 49 / 50
+=> Saving checkpoint
+Translated example sentence
+ ['a', 'boat', 'carrying', 'several', 'men', 'pulled', 'pulled', 'by', 'shore', 'by', 'a', 'large', 'team', 'of', 'horses', '.', '<eos>']
+Epoch 50: 100%|████████████████████████████████████████████████████| 454/454 [00:32<00:00, 14.18it/s]
+Bleu score 18.51
