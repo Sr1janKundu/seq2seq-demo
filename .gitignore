@@ -1,2 +1,5 @@
 /Seq2Seq/.idea
+/Seq2Seq/__pycache__
 /Seq2Seq/my_checkpoint.pth.tar
+/Seq2Seq/my_checkpoint_mod.pth.tar
+/Seq2Seq-with-Attention/my_checkpoint.pth.tar

@@ -116,7 +116,7 @@ class Decoder(nn.Module):
         self.hidden_size = hidden_size
         self.num_layers = num_layers
 
-        self.dropout = nn.Dropout()
+        self.dropout = nn.Dropout(p)
         self.embedding = nn.Embedding(input_size, embedding_size)
         self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
         self.fc = nn.Linear(hidden_size, output_size)
@@ -252,6 +252,7 @@ criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
 if load_model:
     load_checkpoint(torch.load('my_checkpoint.pth.tar'), model, optimizer)
 
+# score = bleu(test_data, model, german, english, device)       # if load model
 sentence = "ein boot mit mehreren männern darauf wird von einem großen pferdegespann ans ufer gezogen."
 
 for epoch in range(num_epochs):
