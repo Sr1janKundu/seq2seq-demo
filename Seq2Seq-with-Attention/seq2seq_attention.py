@@ -167,9 +167,9 @@ load_model = False
 save_model = True
 
 # Training hyperparameters
-num_epochs = 100
-learning_rate = 3e-4
-batch_size = 32
+num_epochs = 50
+learning_rate = 1e-3
+batch_size = 64
 
 # Model hyperparameters
 input_size_encoder = len(german.vocab)

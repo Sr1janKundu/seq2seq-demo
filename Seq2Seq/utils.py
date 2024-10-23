@@ -2,7 +2,7 @@ import torch
 import spacy
 from torchtext.data.metrics import bleu_score
 import sys
-
+from tqdm import tqdm
 
 def translate_sentence(model, sentence, german, english, device, max_length=50):
     """
@@ -79,7 +79,7 @@ def bleu(data, model, german, english, device):
     targets = []
     outputs = []
 
-    for example in data:
+    for example in tqdm(data, desc="Evaluating on Validation: "):
         src = vars(example)["src"]
         trg = vars(example)["trg"]
 

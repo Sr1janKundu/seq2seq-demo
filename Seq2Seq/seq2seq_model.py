@@ -1,9 +1,8 @@
-# from os import write
-
+# import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
-# from IPython import embed
+from IPython import embed
 # from tensorflow.python.layers.core import dropout
 # from tensorflow.python.training.checkpoint_utils import load_checkpoint
 # from torch.nn.functional import embedding
@@ -256,7 +255,7 @@ if load_model:
 sentence = "ein boot mit mehreren männern darauf wird von einem großen pferdegespann ans ufer gezogen."
 
 for epoch in range(num_epochs):
-    print(f'Epoch {epoch} / {num_epochs}')
+    print(f'\nEpoch {epoch+1} / {num_epochs}')
     checkpoint = {'state_dict':model.state_dict(), 'optimizer':optimizer.state_dict()}
     save_checkpoint(checkpoint)
 
@@ -273,11 +272,11 @@ for epoch in range(num_epochs):
         # Get input and targets and get to cuda
         inp_data = batch.src.to(device)
         target = batch.trg.to(device)
-
+        # print(f"Loaded dataset details:\nDatatype: {type(inp_data)}, \nInput Shape: {inp_data.shape}, Target Shape: {target.shape}")
         # Forward prop
         output = model(inp_data, target)
         # output shape: (trg_len, batch_size, output_dim)
-
+        # print(f"Model output details: {output.shape}, (batch size: {batch_size})")
         # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
         # doesn't take input in that form. For example if we have MNIST we want to have
         # output to be: (N, 10) and targets just (N). Here we can view it in a similar
@@ -286,7 +285,7 @@ for epoch in range(num_epochs):
         # Let's also remove the start token while we're at it
         output = output[1:].reshape(-1, output.shape[2])
         target = target[1:].reshape(-1)
-
+        # print(f"Shape after reshaping:\nOutput shape: {output.shape}, target shape: {target.shape}")
         optimizer.zero_grad()
         loss = criterion(output, target)
 
@@ -304,5 +303,8 @@ for epoch in range(num_epochs):
         writer.add_scalar("Training loss", loss, global_step=step)
         step += 1
 
-    score = bleu(test_data[1:100], model, german, english, device)
-    print(f"Bleu score {score * 100:.2f}")
+    score = bleu(validation_data[1:100], model, german, english, device)
+    print(f"Bleu score on validation: {score * 100:.2f}")
+
+score = bleu(test_data[1:100], model, german, english, device)
+print(f"Bleu score on test: {score * 100:.2f}")
