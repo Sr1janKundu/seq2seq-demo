@@ -1,3 +1,4 @@
+import math
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -32,6 +33,29 @@ german.build_vocab(train_data, max_size=10000, min_freq=2)
 english.build_vocab(train_data, max_size=10000, min_freq=2)
 
 
+class PositionalEncoding(nn.Module):
+    def __init__(self, embedding_size, max_len=5000, device="cuda"):
+        super(PositionalEncoding, self).__init__()
+        self.device = device
+        
+        # Create positional encoding matrix
+        pe = torch.zeros(max_len, embedding_size)
+        position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
+        div_term = torch.exp(torch.arange(0, embedding_size, 2).float() * (-math.log(10000.0) / embedding_size))
+        
+        # Apply sine to even indices
+        pe[:, 0::2] = torch.sin(position * div_term)
+        # Apply cosine to odd indices
+        pe[:, 1::2] = torch.cos(position * div_term)
+        
+        pe = pe.unsqueeze(1)  # Shape: (max_len, 1, embedding_size)
+        self.register_buffer('pe', pe)
+
+    def forward(self, x):
+        # x shape: (seq_len, batch_size, embedding_size)
+        return x + self.pe[:x.size(0), :]
+    
+
 class Transformer(nn.Module):
     def __init__(self,
                  embedding_size,
@@ -48,9 +72,12 @@ class Transformer(nn.Module):
         super(Transformer, self).__init__()
 
         self.src_word_embedding = nn.Embedding(src_vocab_size, embedding_size)
-        self.src_position_embedding = nn.Embedding(max_len, embedding_size)
         self.trg_word_embedding = nn.Embedding(trg_vocab_size, embedding_size)
-        self.trg_position_embedding = nn.Embedding(max_len, embedding_size)
+        
+        # Replace learned positional embeddings with sinusoidal encodings
+        self.src_positional_encoding = PositionalEncoding(embedding_size, max_len, device)
+        self.trg_positional_encoding = PositionalEncoding(embedding_size, max_len, device)
+        
         self.device = device
         self.transformer = nn.Transformer(
             embedding_size,
@@ -65,42 +92,37 @@ class Transformer(nn.Module):
         self.src_pad_idx = src_pad_size
 
     def make_src_mask(self, src):
-        # src shape: (src_len, N)       # read pytorch transformer docs
         src_mask = src.transpose(0, 1) == self.src_pad_idx
-        # (N, src_len)
-
         return src_mask
     
     def forward(self, src, trg):
-        src_seq_length, N = src.shape
-        trg_seq_length, N = trg.shape
-
-        src_positions = (
-            torch.arange(0, src_seq_length).unsqueeze(1).expand(src_seq_length, N)
-        ).to(self.device)
-
-        trg_positions = (
-            torch.arange(0, trg_seq_length).unsqueeze(1).expand(trg_seq_length, N)
-        ).to(self.device)
-
-        embed_src = self.dropout(
-            (self.src_word_embedding(src) + self.src_position_embedding(src_positions))
-        )
-
-        embed_trg = self.dropout(
-            (self.trg_word_embedding(trg) + self.trg_position_embedding(trg_positions))
-        )
-
+        # src shape: (src_len, N), trg shape: (trg_len, N)
+        
+        # Create word embeddings
+        src_embedded = self.src_word_embedding(src)  # (src_len, N, embedding_size)
+        trg_embedded = self.trg_word_embedding(trg)  # (trg_len, N, embedding_size)
+        
+        # Add positional encoding
+        src_embedded = self.src_positional_encoding(src_embedded)
+        trg_embedded = self.trg_positional_encoding(trg_embedded)
+        
+        # Apply dropout
+        src_embedded = self.dropout(src_embedded)
+        trg_embedded = self.dropout(trg_embedded)
+        
+        # Create masks
         src_padding_mask = self.make_src_mask(src)
-        trg_mask = self.transformer.generate_square_subsequent_mask(trg_seq_length).to(self.device)
+        trg_mask = self.transformer.generate_square_subsequent_mask(trg.shape[0]).to(self.device)
 
+        # Pass through transformer
         out = self.transformer(
-            embed_src,
-            embed_trg,
-            src_key_padding_mask = src_padding_mask,
-            tgt_mask = trg_mask
+            src_embedded,
+            trg_embedded,
+            src_key_padding_mask=src_padding_mask,
+            tgt_mask=trg_mask
         )
 
+        # Project to vocabulary size
         out = self.fc_out(out)
         return out
     
@@ -115,7 +137,7 @@ num_epochs = 100
 learning_rate = 3e-4
 batch_size = 64
 
-# Model hyperparameters
+# Model hyperparameters 
 src_vocab_size = len(german.vocab)
 trg_vocab_size = len(english.vocab)
 embedding_size = 512
@@ -126,17 +148,6 @@ dropout = 0.10
 max_len = 100
 forward_expansion = 4
 src_pad_idx = english.vocab.stoi["<pad>"]
-
-# Tensorboard
-writer = SummaryWriter("runs/loss_plot")
-step = 0
-
-train_iterator, validation_iterator, test_iterator = BucketIterator.splits(
-    (train_data, validation_data, test_data),
-    batch_size = batch_size,
-    sort_within_batch = True,
-    sort_key = lambda x:len(x.src),
-    device = device)
 
 model = Transformer(
     embedding_size,
@@ -160,6 +171,17 @@ scheduler = optim.lr_scheduler.ReduceLROnPlateau(
 
 pad_idx = english.vocab.stoi["<pad>"]
 criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+# Tensorboard
+writer = SummaryWriter("runs_V2/loss_plot")
+step = 0
+
+train_iterator, validation_iterator, test_iterator = BucketIterator.splits(
+    (train_data, validation_data, test_data),
+    batch_size = batch_size,
+    sort_within_batch = True,
+    sort_key = lambda x:len(x.src),
+    device = device)
 
 if load_model:
     load_checkpoint(torch.load("my_checkpoint.pth.tar"), model, optimizer)
