@@ -5,3 +5,6 @@
 /Seq2Seq-with-Attention/my_checkpoint.pth.tar
 /transformers/__pycache__/
 /transformers/my_checkpoint.pth.tar
+/image_captioning/cnn_lstm/__pycache__/
+/image_captioning/cnn_lstm/my_checkpoint.pth.tar
+/image_captioning/Flickr_8k_Images_Captions/
