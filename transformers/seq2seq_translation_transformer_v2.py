@@ -146,7 +146,7 @@ num_encoder_layers = 3
 num_decoder_layers = 3
 dropout = 0.10
 max_len = 100
-forward_expansion = 4
+forward_expansion = 2048
 src_pad_idx = english.vocab.stoi["<pad>"]
 
 model = Transformer(

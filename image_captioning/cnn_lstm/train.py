@@ -56,6 +56,7 @@ def train():
     model.train()
 
     for epoch in range(num_epochs):
+        print(f"[Epoch {epoch+1} / {num_epochs}]")
         print_examples(model, device, dataset)
         if save_model:
             checkpoint = {
@@ -65,7 +66,7 @@ def train():
             }
             save_checkpoint(checkpoint)
         
-        for idx, (imgs, captions) in enumerate(tqdm(train_loader)):
+        for idx, (imgs, captions) in tqdm(enumerate(train_loader), total=len(train_loader), desc=f'Epoch {epoch + 1}'):
             imgs = imgs.to(device)
             captions = captions.to(device)
 
