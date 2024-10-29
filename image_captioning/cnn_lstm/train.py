@@ -56,7 +56,7 @@ def train():
     model.train()
 
     for epoch in range(num_epochs):
-        print(f"[Epoch {epoch+1} / {num_epochs}]")
+        print(f"\n[Epoch {epoch+1} / {num_epochs}]")
         print_examples(model, device, dataset)
         if save_model:
             checkpoint = {
