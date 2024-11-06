@@ -55,6 +55,8 @@ class Decoder(nn.Module):
         if self.use_tf:
             # teacher forcing
             embedding = self.embedding(captions) if self.training else self.embedding(prev_words)
+            # self.training is a built-in pytorch attribute, that is automatically set based on model's current mode.
+            # The Decoder class inherits from nn.Module, so it automatically gets this self.training attribute.
         else:
             embedding = self.embedding(prev_words)
 
