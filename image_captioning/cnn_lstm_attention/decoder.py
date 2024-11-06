@@ -1,8 +1,5 @@
 import torch
 import torch.nn as nn
-from IPython import embed
-from torch.nn.functional import embedding
-
 from attention import Attention
 
 
