@@ -38,7 +38,7 @@ class Decoder(nn.Module):
         We can use teacher forcing during training. For reference, refer to
         https://www.deeplearningbook.org/contents/rnn.html
         Args:
-            img_features ():
+            img_features (torch.tensor):
             captions ():
 
         Returns:
@@ -47,7 +47,9 @@ class Decoder(nn.Module):
         batch_size = img_features.size(0)
         h, c = self.get_init_lstm_state(img_features)
 
-        max_timespan = max([len(caption) for caption in captions]) - 1
+        # max_timespan = max([len(caption) for caption in captions]) - 1    # use this if 1d list is passed in place of 2d list
+        # to-do: change according to dataset; for coco captions, the loader returns a 2d list - list of 5 lists, each containing batch_size number of captions
+        max_timespan = max(len(caption) for sublist in captions for caption in sublist)
         # maximum number of decoding time steps allowed during caption generation
         # determines the max length of the output sequence (captions) that the model will generate for each image
 
@@ -55,6 +57,8 @@ class Decoder(nn.Module):
         if self.use_tf:
             # teacher forcing
             embedding = self.embedding(captions) if self.training else self.embedding(prev_words)
+            # to-do: change according to dataset exactly like max_timespan
+
             # self.training is a built-in pytorch attribute, that is automatically set based on model's current mode.
             # The Decoder class inherits from nn.Module, so it automatically gets this self.training attribute.
         else:
@@ -103,3 +107,31 @@ class Decoder(nn.Module):
         h = self.tanh(h)
 
         return h, c
+
+    def caption(self, img_features, beam_size):
+        """
+        We use beam search to construct the best sentences following a
+        similar implementation as the author in
+        https://github.com/kelvinxu/arctic-captions/blob/master/generate_caps.py
+        Args:
+            img_features (torch.tensor):
+            beam_size ():
+
+        Returns:
+
+        """
+        prev_words = torch.zeros(beam_size, 1).long()
+
+        sentence = prev_words
+        top_preds = torch.zeros(beam_size, 1)
+        alphas = torch.ones(beam_size, 1, img_features.size(1))
+
+        completed_sentences = []
+        completed_sentences_alphas = []
+        completed_sentences_preds = []
+
+        step = 1
+        h, c = self.get_init_lstm_state(img_features)
+
+        while True:
+            pass

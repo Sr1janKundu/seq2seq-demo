@@ -13,7 +13,7 @@ class Encoder(nn.Module):
         """
 
         Args:
-            network ():
+            network (str):
         """
         super(Encoder, self).__init__()
         if network == 'resnet50':
@@ -41,7 +41,7 @@ class Encoder(nn.Module):
         """
 
         Args:
-            x ():
+            x (torch.tensor):
 
         Returns:
 
