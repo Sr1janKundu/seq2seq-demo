@@ -58,7 +58,7 @@ class Decoder(nn.Module):
             # teacher forcing
             embedding = self.embedding(captions) if self.training else self.embedding(prev_words)
             # to-do: change according to dataset exactly like max_timespan
-
+            # EITHER PASS 1D LIST AS captions IN train.py, OR SAMPLE FROM LIST OF 5 IN THE START OF forward()
             # self.training is a built-in pytorch attribute, that is automatically set based on model's current mode.
             # The Decoder class inherits from nn.Module, so it automatically gets this self.training attribute.
         else:
@@ -134,4 +134,51 @@ class Decoder(nn.Module):
         h, c = self.get_init_lstm_state(img_features)
 
         while True:
-            pass
+            embedding = self.embedding(prev_words).squeeze(1)
+            context, alpha = self.attention(img_features, h)
+            gate = self.sigmoid(self.f_beta(h))
+            gated_context = gate * context
+
+            lstm_input = torch.cat((embedding, gated_context), dim=1)
+            h, c = self.lstm(lstm_input, (h, c))
+            output = self.deep_output(h)
+            output = top_preds.expand_as(output) + output
+
+            if step == 1:
+                top_preds, top_words = output[0].topk(beam_size, 0, True, True)
+            else:
+                top_preds, top_words = output.view(-1).topk(beam_size, 0, True, True)
+            prev_word_idxs = top_words / output.size(1)
+            next_word_idxs = top_words % output.size(1)
+
+            sentences = torch.cat((sentences[prev_word_idxs], next_word_idxs.unsqueeze(1)), dim=1)
+            alphas = torch.cat((alphas[prev_word_idxs], alpha[prev_word_idxs].unsqueeze(1)), dim=1)
+
+            incomplete = [idx for idx, next_word in enumerate(next_word_idxs) if next_word != 1]
+            complete = list(set(range(len(next_word_idxs))) - set(incomplete))
+
+            if len(complete) > 0:
+                completed_sentences.extend(sentences[complete].tolist())
+                completed_sentences_alphas.extend(alphas[complete].tolist())
+                completed_sentences_preds.extend(top_preds[complete])
+            beam_size -= len(complete)
+
+            if beam_size == 0:
+                break
+            sentences = sentences[incomplete]
+            alphas = alphas[incomplete]
+            h = h[prev_word_idxs[incomplete]]
+            c = c[prev_word_idxs[incomplete]]
+            img_features = img_features[prev_word_idxs[incomplete]]
+            top_preds = top_preds[incomplete].unsqueeze(1)
+            prev_words = next_word_idxs[incomplete].unsqueeze(1)
+
+            if step > 50:
+                break
+            step += 1
+
+        idx = completed_sentences_preds.index(max(completed_sentences_preds))
+        sentence = completed_sentences[idx]
+        alpha = completed_sentences_alphas[idx]
+
+        return sentence, alpha
