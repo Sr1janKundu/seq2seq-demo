@@ -1,4 +1,4 @@
-import argparse, json
+import argparse, json, os
 from collections import Counter
 
 
@@ -32,10 +32,10 @@ def generate_json_data(split_path, data_path, max_captions_per_image, min_word_c
                 break
 
             if img['split'] == 'train':
-                train_img_paths.append(data_path + '\\imgs\\' + img['filepath'] + '\\' + img['filename'])
+                train_img_paths.append(data_path + 'imgs\\' + img['filepath'] + '\\' + img['filename'])
                 train_caption_tokens.append(sentence['tokens'])
             elif img['split'] == 'val':
-                validation_img_paths.append(data_path + '\\imgs\\' + img['filepath'] + '\\' + img['filename'])
+                validation_img_paths.append(data_path + 'imgs\\' + img['filepath'] + '\\' + img['filename'])
                 validation_caption_tokens.append(sentence['tokens'])
             max_length = max(max_length, len(sentence['tokens']))
             word_count.update(sentence['tokens'])
@@ -62,6 +62,12 @@ def generate_json_data(split_path, data_path, max_captions_per_image, min_word_c
     with open(data_path + '\\val_captions.json', 'w') as f:
         json.dump(validation_captions, f)
 
+    print(f"Done!, generated files:\n\n{os.path.join(data_path,'word_dict.json')},"
+          f"\n{os.path.join(data_path+'train_img_paths.json')},"
+          f"\n{os.path.join(data_path+'val_img_paths.json')},"
+          f"\n{os.path.join(data_path+'train_captions.json')},"
+          f"\n{os.path.join(data_path+'val_captions.json')},")
+
 
 def process_caption_tokens(caption_tokens, word_dict, max_length):
     """
@@ -86,11 +92,14 @@ def process_caption_tokens(caption_tokens, word_dict, max_length):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate json files')
-    parser.add_argument('--split-path', type=str, default='data/coco/dataset.json')
-    parser.add_argument('--data-path', type=str, default='data/coco')
+    # parser.add_argument('--split-path', type=str, default='data/coco/dataset.json')
+    # parser.add_argument('--data-path', type=str, default='data/coco')
 
-    # parser.add_argument('--split-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\dataset_coco.json')
-    # parser.add_argument('--data-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\')
+    # parser.add_argument('--split-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\dataset_coco.json') # MIU
+    # parser.add_argument('--data-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\') # MIU
+
+    parser.add_argument('--split-path', type=str, default='E:\\temp_data_dump\\COCO2014\\dataset_coco.json') # Laptop
+    parser.add_argument('--data-path', type=str, default='E:\\temp_data_dump\\COCO2014\\') # Laptop
 
     parser.add_argument('--max-captions', type=int, default=5,
                         help='maximum number of captions per image')

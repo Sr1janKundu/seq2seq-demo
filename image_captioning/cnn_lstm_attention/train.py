@@ -44,7 +44,9 @@ def main(args):
     decoder = Decoder(vocabulary_size, encoder.dim, args.tf)
 
     if args.model:
+        print(f'Loading model from: {args.model}')
         decoder.load_state_dict(torch.load(args.model))
+        print(f'Loaded model from: {args.model}')
 
     encoder.to(device)
     decoder.to(device)
@@ -61,7 +63,7 @@ def main(args):
         ImageCaptionDataset(data_transforms, args.data, split_type='val'),
         batch_size=args.batch_size, shuffle=True, num_workers=1)
 
-    print('Starting training with {}'.format(args))
+    print('\nStarting training with {}'.format(args))
     for epoch in range(1, args.epochs+1):
         print(f'Epoch: {epoch}\n')
         train(epoch, encoder, decoder, optimizer, cross_entropy_loss,
@@ -234,8 +236,12 @@ if __name__ == "__main__":
                         help='regularization constant (default: 1)')
     parser.add_argument('--log-interval', type=int, default=100, metavar='L',
                         help='number of batches to wait before logging training stats (default: 100)')
-    parser.add_argument('--data', type=str, default='data/coco',
-                        help='path to data images (default: data/coco)')
+    # parser.add_argument('--data', type=str, default='data/coco',
+    #                     help='path to data images (default: data/coco)')
+    # parser.add_argument('--data', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\',
+    #                     help='path to data images (default: C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\)')    # MIU
+    parser.add_argument('--data', type=str, default='E:\\temp_data_dump\\COCO2014\\',
+                        help='path to data images (default: E:\\temp_data_dump\\COCO2014\\)')    # Laptop
     parser.add_argument('--network', choices=['vgg19', 'resnet152', 'densenet161'], default='vgg19',
                         help='Network to use in the encoder (default: vgg19)')
     parser.add_argument('--model', type=str, help='path to model')
