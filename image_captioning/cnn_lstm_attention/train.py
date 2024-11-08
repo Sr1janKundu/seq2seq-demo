@@ -10,7 +10,6 @@ from torch.nn.utils.rnn import pack_padded_sequence
 from torchvision.transforms import v2
 from tqdm import tqdm
 
-from Seq2Seq.seq2seq_model import optimizer
 from dataset import ImageCaptionDataset
 from decoder import Decoder
 from encoder import Encoder
