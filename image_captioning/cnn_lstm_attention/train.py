@@ -4,7 +4,6 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from nltk.translate.bleu_score import corpus_bleu
-from torch.onnx.symbolic_opset12 import cross_entropy_loss
 from torch.utils.tensorboard import SummaryWriter
 from torch.autograd import Variable
 from torch.nn.utils.rnn import pack_padded_sequence
@@ -15,7 +14,6 @@ from Seq2Seq.seq2seq_model import optimizer
 from dataset import ImageCaptionDataset
 from decoder import Decoder
 from encoder import Encoder
-from transformers.seq2seq_translation_transformer_v2 import scheduler
 from utils import AverageMeter, accuracy, calculate_caption_lengths
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
