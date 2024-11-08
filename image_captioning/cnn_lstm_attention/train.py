@@ -1,5 +1,4 @@
 import argparse, json
-import os
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -38,7 +37,7 @@ def main(args):
     """
     writer = SummaryWriter()
 
-    word_dict = json.load(open(args.data + '/word_dict.json', 'r'))
+    word_dict = json.load(open(args.data + '\\word_dict.json', 'r'))
     vocabulary_size = len(word_dict)
 
     encoder = Encoder(args.network)
@@ -64,12 +63,13 @@ def main(args):
 
     print('Starting training with {}'.format(args))
     for epoch in range(1, args.epochs+1):
-        scheduler.step()
+        print(f'Epoch: {epoch}\n')
         train(epoch, encoder, decoder, optimizer, cross_entropy_loss,
               train_loader, word_dict, args.alpha_c, args.log_interval, writer)
+        scheduler.step()
         validate(epoch, encoder, decoder, cross_entropy_loss, val_loader,
                  word_dict, args.alpha_c, args.log_interval, writer)
-        model_file = 'model/model_' + args.network + '_' + str(epoch) + '.pth'
+        model_file = 'model\\model_' + args.network + '_' + str(epoch) + '.pth'
         torch.save(decoder.state_dict(), model_file)
         print('Saved model to ' + model_file)
     writer.close()
@@ -124,7 +124,7 @@ def train(epoch, encoder, decoder, optimizer, cross_entropy_loss, data_loader, w
         top5.update(acc5, total_caption_length)
 
         if batch_idx % log_interval == 0:
-            print('Train Batch: [{0}/{1}]\t'
+            print('\nTrain Batch: [{0}/{1}]\t'
                   'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
                   'Top 1 Accuracy {top1.val:.3f} ({top1.avg:.3f})\t'
                   'Top 5 Accuracy {top5.val:.3f} ({top5.avg:.3f})'.format(

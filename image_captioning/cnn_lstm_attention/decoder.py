@@ -47,9 +47,9 @@ class Decoder(nn.Module):
         batch_size = img_features.size(0)
         h, c = self.get_init_lstm_state(img_features)
 
-        # max_timespan = max([len(caption) for caption in captions]) - 1    # use this if 1d list is passed in place of 2d list
+        max_timespan = max([len(caption) for caption in captions]) - 1    # use this if 1d list is passed in place of 2d list
         # to-do: change according to dataset; for coco captions, the loader returns a 2d list - list of 5 lists, each containing batch_size number of captions
-        max_timespan = max(len(caption) for sublist in captions for caption in sublist)
+        # max_timespan = max(len(caption) for sublist in captions for caption in sublist)
         # maximum number of decoding time steps allowed during caption generation
         # determines the max length of the output sequence (captions) that the model will generate for each image
 
