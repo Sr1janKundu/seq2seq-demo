@@ -10,3 +10,5 @@
 /image_captioning/Flickr_8k_Images_Captions/
 /image_captioning/COCO2014/
 .idea/
+image_captioning/karpathy_splits.zip
+image_captioning/cnn_lstm_attention/__pycache__/
