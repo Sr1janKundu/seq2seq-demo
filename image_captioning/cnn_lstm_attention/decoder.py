@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from attention import Attention
-
+from IPython import embed
 
 class Decoder(nn.Module):
     def __init__(self, vocabulary_size, encoder_dim, tf=False):
@@ -122,7 +122,7 @@ class Decoder(nn.Module):
         """
         prev_words = torch.zeros(beam_size, 1).long()
 
-        sentence = prev_words
+        sentences = prev_words
         top_preds = torch.zeros(beam_size, 1)
         alphas = torch.ones(beam_size, 1, img_features.size(1))
 
@@ -150,6 +150,7 @@ class Decoder(nn.Module):
                 top_preds, top_words = output.view(-1).topk(beam_size, 0, True, True)
             prev_word_idxs = top_words / output.size(1)
             next_word_idxs = top_words % output.size(1)
+            embed()
 
             sentences = torch.cat((sentences[prev_word_idxs], next_word_idxs.unsqueeze(1)), dim=1)
             alphas = torch.cat((alphas[prev_word_idxs], alpha[prev_word_idxs].unsqueeze(1)), dim=1)

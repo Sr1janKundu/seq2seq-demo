@@ -22,6 +22,8 @@ from encoder import Encoder
 from train import data_transforms
 
 
+# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 def generate_caption_visualization(encoder, decoder, img_path, word_dict, beam_size=3, smooth=True):
     """
 
@@ -103,11 +105,17 @@ if __name__ == "__main__":
     parser.add_argument('--network', choices=['vgg19', 'resnet152'], default='vgg19',
                         help='Network to use in the encoder (default: vgg19)')
     parser.add_argument('--model', type=str, help='path to model paramters')
-    parser.add_argument('--data-path', type=str, default='data/coco',
-                        help='path to data (default: data/coco)')
+
+    # parser.add_argument('--data-path', type=str, default='data/coco',
+    #                     help='path to data (default: data/coco)')
+    # parser.add_argument('--data-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\',
+    #                     help='path to data (default: C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\)')   # MIU
+    parser.add_argument('--data-path', type=str, default='E:\\temp_data_dump\\COCO2014\\',
+                        help='path to data (default: E:\\temp_data_dump\\COCO2014\\)')   # Laptop
+
     args = parser.parse_args()
 
-    word_dict = json.load(open(args.data_path + '/word_dict.json', 'r'))
+    word_dict = json.load(open(args.data_path + 'word_dict.json', 'r'))
     vocabulary_size = len(word_dict)
 
     encoder = Encoder(network=args.network)
