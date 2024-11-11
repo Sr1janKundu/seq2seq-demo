@@ -12,5 +12,4 @@
 .idea/
 image_captioning/karpathy_splits.zip
 image_captioning/cnn_lstm_attention/__pycache__/
-image_captioning/cnn_lstm_attention/runs/
 image_captioning/cnn_lstm_attention/model/

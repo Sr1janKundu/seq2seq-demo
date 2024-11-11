@@ -71,7 +71,10 @@ def main(args):
         scheduler.step()
         validate(epoch, encoder, decoder, cross_entropy_loss, val_loader,
                  word_dict, args.alpha_c, args.log_interval, writer)
-        model_file = 'model\\model_' + args.network + '_' + str(epoch) + '.pth'
+        if args.model:
+            model_file = 'model\\model_' + args.network + '_' + str(int(args.model.split('.')[0][-1]) + epoch) + '.pth'
+        else:
+            model_file = 'model\\model_' + args.network + '_' + str(epoch) + '.pth'
         torch.save(decoder.state_dict(), model_file)
         print('Saved model to ' + model_file)
     writer.close()
@@ -198,7 +201,7 @@ def validate(epoch, encoder, decoder, cross_entropy_loss, data_loader, word_dict
                                        if idx != word_dict['<start>'] and idx != word_dict['<pad>']])
 
             if batch_idx % log_interval == 0:
-                print('Validation Batch: [{0}/{1}]\t'
+                print('\nValidation Batch: [{0}/{1}]\t'
                       'Loss {loss.val:.4f} ({loss.avg:.4f})\t'
                       'Top 1 Accuracy {top1.val:.3f} ({top1.avg:.3f})\t'
                       'Top 5 Accuracy {top5.val:.3f} ({top5.avg:.3f})'.format(
@@ -216,7 +219,7 @@ def validate(epoch, encoder, decoder, cross_entropy_loss, data_loader, word_dict
         writer.add_scalar('val_bleu2', bleu_2, epoch)
         writer.add_scalar('val_bleu3', bleu_3, epoch)
         writer.add_scalar('val_bleu4', bleu_4, epoch)
-        print('Validation Epoch: {}\t'
+        print('\n\nValidation Epoch: {}\t'
               'BLEU-1 ({})\t'
               'BLEU-2 ({})\t'
               'BLEU-3 ({})\t'
@@ -238,10 +241,10 @@ if __name__ == "__main__":
                         help='number of batches to wait before logging training stats (default: 100)')
     # parser.add_argument('--data', type=str, default='data/coco',
     #                     help='path to data images (default: data/coco)')
-    # parser.add_argument('--data', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\',
-    #                     help='path to data images (default: C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\)')    # MIU
-    parser.add_argument('--data', type=str, default='E:\\temp_data_dump\\COCO2014\\',
-                        help='path to data images (default: E:\\temp_data_dump\\COCO2014\\)')    # Laptop
+    parser.add_argument('--data', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\',
+                        help='path to data images (default: C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\)')    # MIU
+    # parser.add_argument('--data', type=str, default='E:\\temp_data_dump\\COCO2014\\',
+    #                     help='path to data images (default: E:\\temp_data_dump\\COCO2014\\)')    # Laptop
     parser.add_argument('--network', choices=['vgg19', 'resnet152', 'densenet161'], default='vgg19',
                         help='Network to use in the encoder (default: vgg19)')
     parser.add_argument('--model', type=str, help='path to model')
