@@ -85,7 +85,7 @@ def generate_caption_visualization(encoder, decoder, img_path, word_dict, beam_s
         plt.imshow(img)
 
         if encoder.network == 'vgg19':
-            shape_size = 14
+            shape_size = 7
         else:
             shape_size = 7
 
@@ -108,10 +108,10 @@ if __name__ == "__main__":
 
     # parser.add_argument('--data-path', type=str, default='data/coco',
     #                     help='path to data (default: data/coco)')
-    # parser.add_argument('--data-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\',
-    #                     help='path to data (default: C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\)')   # MIU
-    parser.add_argument('--data-path', type=str, default='E:\\temp_data_dump\\COCO2014\\',
-                        help='path to data (default: E:\\temp_data_dump\\COCO2014\\)')   # Laptop
+    parser.add_argument('--data-path', type=str, default='C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\',
+                        help='path to data (default: C:\\Users\\Srijan\\Desktop\\Srijan\\seq2seq-demo\\image_captioning\\COCO2014\\)')   # MIU
+    # parser.add_argument('--data-path', type=str, default='E:\\temp_data_dump\\COCO2014\\',
+    #                     help='path to data (default: E:\\temp_data_dump\\COCO2014\\)')   # Laptop
 
     args = parser.parse_args()
 

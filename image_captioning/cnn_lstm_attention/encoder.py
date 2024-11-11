@@ -16,6 +16,7 @@ class Encoder(nn.Module):
             network (str):
         """
         super(Encoder, self).__init__()
+        self.network = network
         if network == 'resnet50':
             self.net = resnet50(weights = ResNet50_Weights.DEFAULT)
             self.net = nn.Sequential(*list(self.net.children())[:-2])
