@@ -85,7 +85,7 @@ def generate_caption_visualization(encoder, decoder, img_path, word_dict, beam_s
         plt.imshow(img)
 
         if encoder.network == 'vgg19':
-            shape_size = 7
+            shape_size = 7      # changed from 14 to 7
         else:
             shape_size = 7
 
